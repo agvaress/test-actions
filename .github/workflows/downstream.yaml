@@ -1,0 +1,10 @@
+name: Greetings 
+on:
+  repository_dispatch:
+    types: [my-event]
+jobs:
+  myEvent:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: echo "${{ github.event.client_payload.greet }} ${{ github.event.client_payload.whom }}"
