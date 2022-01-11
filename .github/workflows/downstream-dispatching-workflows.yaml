@@ -6,11 +6,9 @@ on:
       greet:
         description: 'Greetings'
         required: true
-        default: 'Hello'
       whom:
         description: 'Whom to greet'
         required: true
-        default: 'The Octocat'
 
 jobs:
   say_hello:

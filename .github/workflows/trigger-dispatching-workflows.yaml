@@ -1,0 +1,19 @@
+jobs:
+  trigger-say-hello:
+    container:
+      container: curlimages/curl:7.81.0
+      runs-on: ubuntu-latest
+      steps:
+      - name: call API
+        env:
+          TOKEN: ${{ secrets.REPO_ACCESS_TOKEN }}
+          URL: "api.github.com/repos/agvaress/test-actions/actions/workflows/downstream-dispatching-workflows.yaml/dispatches"
+        with:
+          args: curl --fail -X POST "https://$URL" \
+          -s -H "Authorization: token $TOKEN" \
+            -d '{"ref":"master",
+            "inputs": {
+              "greet": "Hi",
+              "whom": "user"
+            }
+        }'
