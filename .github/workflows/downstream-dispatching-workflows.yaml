@@ -1,0 +1,20 @@
+name: triggered hello  workflow
+
+on:
+  workflow_dispatch:
+    inputs:
+      greet:
+        description: 'Greetings'
+        required: true
+        default: 'Hello'
+      whom:
+        description: 'Whom to greet'
+        required: true
+        default: 'The Octocat'
+
+jobs:
+  say_hello:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo "Hello ${{ github.event.inputs.greet }} ${{ github.event.inputs.whom }}!"
