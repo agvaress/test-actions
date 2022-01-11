@@ -12,7 +12,8 @@ jobs:
       env:
         TOKEN: ${{ secrets.REPO_ACCESS_TOKEN }}
         URL: "api.github.com/repos/agvaress/test-actions/actions/workflows/downstream-dispatching-workflows.yaml/dispatches"
-      run: >
-        --fail -X POST "https://$URL"
-        -s -H "Authorization: token $TOKEN"
-        -d '{"ref":"master", "inputs": {"greet": "Hi", "whom": "user"}}'
+      run: |
+         --version
+#        --fail -X POST "https://$URL"
+#        -s -H "Authorization: token $TOKEN"
+#        -d '{"ref":"master", "inputs": {"greet": "Hi", "whom": "user"}}'
