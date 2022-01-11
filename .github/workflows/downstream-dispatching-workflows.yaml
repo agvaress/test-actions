@@ -1,4 +1,4 @@
-name: triggered hello  workflow
+name: triggered_hello_workflow
 
 on:
   workflow_dispatch:
@@ -17,4 +17,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: |
-          echo "Hello ${{ github.event.inputs.greet }} ${{ github.event.inputs.whom }}!"
+          echo "${{ github.event.inputs.greet }} ${{ github.event.inputs.whom }}!"
