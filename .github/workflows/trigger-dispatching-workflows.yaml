@@ -4,14 +4,15 @@ on: [push]
 
 jobs:
   trigger-say-hello:
-    runs-on: ubuntu-latest
+    container:
+      image: curlimages/curl:7.81.0
     steps:
     - name: call API
       env:
         TOKEN: ${{ secrets.REPO_ACCESS_TOKEN }}
         URL: "api.github.com/repos/agvaress/test-actions/actions/workflows/downstream-dispatching-workflows.yaml/dispatches"
-      run: >
-        curl --fail -X POST "https://$URL"
+      args: >
+        --fail -X POST "https://$URL"
         -s -H "Authorization: token $TOKEN"
         -d '{"ref":"master",
           "inputs": {
