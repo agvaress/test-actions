@@ -14,12 +14,12 @@ jobs:
           URL: "api.github.com/repos/agvaress/test-actions/actions/workflows/downstream-dispatching-workflows.yaml/dispatches"
         with:
           args: | 
-          curl --fail -X POST "https://$URL"
-          -s -H "Authorization: token $TOKEN" 
-          -d '{"ref":"master",
-            "inputs": {
-              "greet": "Hi",
-              "whom": "user"
-            }
-        }'
+            --fail -X POST "https://$URL"
+            -s -H "Authorization: token $TOKEN" 
+            -d '{"ref":"master",
+              "inputs": {
+                "greet": "Hi",
+                "whom": "user"
+               }
+             }'
 
