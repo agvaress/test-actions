@@ -20,7 +20,7 @@ jobs:
         -s -H "Authorization: token $TOKEN"
         -d '{"ref":"master",
           "inputs": {
-            "greet": "Hi",
-            "whom": "user"
+            "greet": "hello from pipeline",
+            "whom": "triggered"
           }
         }'
