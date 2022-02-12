@@ -1,9 +1,9 @@
 ---
 name: on-schedule
 
-on:
-  schedule:
-    - cron: '37 17,18 * * *'
+on: [push]
+  #schedule:
+  #  - cron: '37 17,18 * * *'
 
 
 jobs:
