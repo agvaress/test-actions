@@ -16,7 +16,7 @@ jobs:
         #TOKEN: ${{ secrets.GITHUB_TOKEN }}
         URL: "api.github.com/repos/agvaress/test-actions/actions/workflows/downstream-dispatching-workflows.yaml/dispatches"
       run: >
-        curl -X POST "https://$URL"
+        curl -v -X POST "https://$URL"
         -s -H "Authorization: token $TOKEN"
         -d '{"ref":"master",
           "inputs": {
